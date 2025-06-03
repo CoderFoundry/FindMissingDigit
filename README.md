@@ -4,7 +4,7 @@ Welcome! This repository contains a C# solution to the popular "Find the Missing
 
 [![Watch the video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/your-video-link)
 
-Check out the full walkthrough on YouTube where I break down the challenge and show you how to write clean, effective code.
+Check out the full walkthrough on YouTube that breaks down the challenge and shows you how to solve it.
 
 ## About the Challenge
 
@@ -36,7 +36,7 @@ Output: `-1` (because no digit can result in `150`)
 - The `?` can appear anywhere in the numbers on the left or right of the equation.
 - There will only be one missing digit.
 - Equations will always be provided as a string, and should be formatted as `"{integer} {operator} {integer} = {integer}"`.
-- Return `-1` if it is impossible create a mathematically correct equation or invalid input was received.
+- Return `-1` if it is impossible to create a mathematically correct equation or invalid input was received.
 
 ### Edge Cases
 
@@ -51,7 +51,6 @@ Output: `-1` (because no digit can result in `150`)
 
 - **String manipulation and parsing**—critical for real-world data processing.
 - **Defensive coding**—validating inputs, avoiding runtime errors, handling unexpected or malformed data.
-- **Testing all possibilities**—brute-force logic with performance considerations.
 - **Understanding problem requirements**—paying close attention to rules like “no leading zeros” or valid math.
 
 Keep practicing challenges like this to build up the instincts and skills you need to excel in real-world coding and interviews!
