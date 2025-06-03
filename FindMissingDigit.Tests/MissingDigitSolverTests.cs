@@ -6,6 +6,7 @@
         [InlineData("1? + 23 = 35", 2)]
         [InlineData("4 * ? = 28", 7)]
         [InlineData("?3 - 11 = 22", 3)]
+        [InlineData("5 * 9 = 4?", 5)]
         [InlineData("150 / 3 = 5?", 0)]
         [InlineData("1? + 2 = 50", -1)]
         public void FindsCorrectDigit(string expression, int expected)

@@ -10,46 +10,62 @@ namespace FindMissingDigit
 {
     public static class MissingDigitSolver
     {
-
+        //expression = "12 + 23 = 35";
         public static int FindMissingDigit(string expression)
         {
             for (int i = 0; i <= 9; i++)
             {
-                if (IsValid(expression.Replace("?", (i).ToString())))
-                {
-                    return i;
-                }
+                
+                string candidate = expression.Replace("?", i.ToString());
+                
+                if (IsValid(candidate)) return i;
+                
             }
 
             return -1;
         }
 
+
+        //expression = "12 + 23 = 35";
         public static bool IsValid(string expression)
         {
             string[] parts = expression.Split([' '], StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
 
-            try
-            {
-                int leftTerm = int.Parse(parts[0]);
-                var eqOperator = parts[1];
-                int rightTerm = int.Parse(parts[2]);
-                int result = int.Parse(parts[4]);
+            if (parts.Length != 5) return false;
 
-                bool valid = eqOperator switch
-                {
-                    "+" => leftTerm + rightTerm == result,
-                    "-" => leftTerm - rightTerm == result,
-                    "*" => leftTerm * rightTerm == result,
-                    "/" when rightTerm != 0 => leftTerm / rightTerm == result,
-                    _ => false
-                };
+            string leftStr = parts[0];
+            string operatorStr = parts[1];
+            string rightStr = parts[2];
+            string equalStr = parts[3];
+            string resultStr = parts[4];
 
-                return valid;
-            }
-            catch
+            if (equalStr != "=") return false;
+
+            if (HasLeadingZero(leftStr) || HasLeadingZero(rightStr) || HasLeadingZero(resultStr))
             {
                 return false;
             }
+
+
+            if (!int.TryParse(leftStr, out int leftTerm)) return false;
+            if (!int.TryParse(rightStr, out int rightTerm)) return false;
+            if (!int.TryParse(resultStr, out int result)) return false;
+                       
+
+            return operatorStr switch
+            {
+                "+" => leftTerm + rightTerm == result,
+                "-" => leftTerm - rightTerm == result,
+                "*" => leftTerm * rightTerm == result,
+                "/" when rightTerm != 0 => leftTerm / rightTerm == result,
+                _ => false
+            };
+
+        }
+
+        private static bool HasLeadingZero(string s)
+        {
+            return s.Length > 1 && s.StartsWith("0");
         }
     }
 }
