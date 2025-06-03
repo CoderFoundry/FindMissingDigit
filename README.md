@@ -42,7 +42,7 @@ The `?` can appear anywhere in the numbers on the left or right of the equation.
 - **String Parsing:** The input is a single string, so you need to split it into numbers and operators.
 - **Single Digit Only:** Only one digit is missing and must be replaced.
 - **No Leading Zeros:** Numbers cannot have leading zeros (e.g., `03 + 2 = 5` is invalid).
-- **Valid Equations Only:** Only return a digit if it creates a mathematically correct equation.
+- **Valid Equations Only:** return -1 if it cannot create a mathematically correct equation.
 - **Brute-force Approach:** The standard way to solve is to try every digit from 0 to 9, replacing the `?` and checking if the equation works.
 
 ### Edge Cases
