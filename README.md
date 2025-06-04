@@ -1,4 +1,4 @@
-# Find Missing Digit – Coding Challenge Solution
+# Find the Missing Digit – Coding Challenge Solution
 
 Welcome! This repository contains a C# solution to the popular "Find the Missing Digit" coding challenge. Whether you’re prepping for interviews, leveling up your skills, or following along with our [YouTube tutorial](https://www.youtube.com/your-video-link), you’re in the right place.
 
